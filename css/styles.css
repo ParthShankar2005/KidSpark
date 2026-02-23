@@ -586,7 +586,8 @@ body {
 
 .sidebar.collapsed .sidebar-logout {
     justify-content: center;
-    padding: 0.35rem 0.6rem;;
+    padding: 0.35rem 0.6rem;
+    ;
     margin: 0.2rem 0.5rem;
 }
 
@@ -3127,4 +3128,68 @@ body {
     background: rgba(156, 205, 98, 0.12);
     border-radius: 6px;
     border-left: 3px solid #9ccD62;
+}
+
+/* --- Playful Decorations --- */
+.decoration-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Hanging Emojis */
+.hanging-emoji {
+    position: absolute;
+    font-size: 2rem;
+    top: -10px;
+    transform-origin: top center;
+    animation: sway 4s ease-in-out infinite alternate;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.hanging-emoji::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 2px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateX(-50%);
+}
+
+@keyframes sway {
+    0% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(15deg);
+    }
+}
+
+/* Flying Bugs */
+.flying-bug {
+    position: absolute;
+    font-size: 1.8rem;
+    z-index: 1000;
+    pointer-events: none;
+    animation: fly-bounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes fly-bounce {
+
+    0%,
+    100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -30px;
+    }
 }
