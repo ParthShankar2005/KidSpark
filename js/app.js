@@ -220,10 +220,57 @@ const KSApp = {
 
     bindSidebarLogout() {
         document.getElementById('sidebar-logout-btn')?.addEventListener('click', () => {
-            if (confirm('Are you sure you want to log out?')) {
+            this.showPinModal(() => {
                 this.logout();
-            }
+            });
         });
+    },
+
+    showPinModal(onSuccess) {
+        const modal = document.getElementById('pin-modal');
+        const input = document.getElementById('modal-pin-input');
+        const verifyBtn = document.getElementById('modal-verify');
+        const cancelBtn = document.getElementById('modal-cancel');
+        const errorEl = document.getElementById('modal-pin-error');
+
+        if (!modal || !input || !verifyBtn || !cancelBtn) return;
+
+        modal.classList.remove('hidden');
+        input.value = '';
+        input.focus();
+        errorEl?.classList.add('hidden');
+
+        const cleanup = () => {
+            modal.classList.add('hidden');
+            verifyBtn.removeEventListener('click', verify);
+            cancelBtn.removeEventListener('click', cancel);
+            input.removeEventListener('keydown', keydown);
+        };
+
+        const verify = () => {
+            const pin = input.value.trim();
+            if (KSStorage.verifyPin(pin)) {
+                cleanup();
+                onSuccess();
+            } else {
+                errorEl?.classList.remove('hidden');
+                input.value = '';
+                input.focus();
+            }
+        };
+
+        const cancel = () => {
+            cleanup();
+        };
+
+        const keydown = (e) => {
+            if (e.key === 'Enter') verify();
+            if (e.key === 'Escape') cancel();
+        };
+
+        verifyBtn.addEventListener('click', verify);
+        cancelBtn.addEventListener('click', cancel);
+        input.addEventListener('keydown', keydown);
     },
 
     logout() {
