@@ -366,7 +366,7 @@ body {
 .sidebar {
     width: var(--sidebar-w);
     min-height: 100vh;
-    background: var(--bg-sidebar);
+    background: var(--c--gold);
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -415,7 +415,7 @@ body {
 .logo-spark-sm {
     font-size: 1.5rem;
     flex-shrink: 0;
-    filter: drop-shadow(0 0 0.4rem rgba(156, 205, 98, 0.8));
+    filter: drop-shadow(0 0 0.4rem rgba(156, 205, 98, 0.7));
     cursor: pointer;
 }
 
@@ -423,7 +423,7 @@ body {
     font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 900;
-    color: var(--c-cream);
+    color: var(--accent);
     flex: 1;
 }
 
@@ -750,7 +750,6 @@ body {
 }
 
 .home-card {
-    background: var(--bg-card);
     backdrop-filter: blur(0.75rem);
     border: 0.0625rem solid rgba(255, 255, 255, 0.6);
     border-radius: var(--br-xl);
