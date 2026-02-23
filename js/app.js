@@ -11,6 +11,7 @@ const KSApp = {
         this.bindAuth();
         this.bindNav();
         this.bindSidebarToggle();
+        this.bindSidebarLogout();
         this.bindHomeCards();
         this.setDailyTip();
     },
@@ -19,8 +20,8 @@ const KSApp = {
 
     checkAutoLogin() {
         const data = KSStorage.load();
-        if (data && data.email && data.passwordHash) {
-            // Auto-login
+        if (data && data.email && data.passwordHash && data.isLoggedIn) {
+            // Auto-login only if session is active
             this.showApp(data);
         } else {
             this.showAuth();
@@ -215,6 +216,19 @@ const KSApp = {
         this.toastTimer = setTimeout(() => {
             toast.classList.add('hidden');
         }, 3000);
+    },
+
+    bindSidebarLogout() {
+        document.getElementById('sidebar-logout-btn')?.addEventListener('click', () => {
+            if (confirm('Are you sure you want to log out?')) {
+                this.logout();
+            }
+        });
+    },
+
+    logout() {
+        KSStorage.logout();
+        window.location.reload();
     }
 };
 

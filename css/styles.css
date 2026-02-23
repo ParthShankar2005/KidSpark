@@ -535,7 +535,7 @@ body {
     background: rgba(213, 29, 72, 0.18);
     border-radius: var(--br-pill);
     width: fit-content;
-    min-width: 70px;
+    min-width: 100px;
 }
 
 .lives-icon {
@@ -550,6 +550,31 @@ body {
     letter-spacing: 0.04em;
     min-width: 1.8rem;
     text-align: center;
+}
+
+.logout-btn-sm {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50%;
+    width: 1.8rem;
+    height: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background var(--tr-fast), transform var(--tr-fast);
+    padding: 0;
+    margin-left: 0.2rem;
+}
+
+.logout-btn-sm:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+.logout-btn-sm:active {
+    transform: scale(0.95);
 }
 
 /* ============================================================ Main Content ======= */

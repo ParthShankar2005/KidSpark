@@ -44,6 +44,7 @@ const KSStorage = {
                 lastTimerDate: today,
             },
             currentSection: 'home',
+            isLoggedIn: true,
         };
         this.save(data);
         return data;
@@ -55,6 +56,10 @@ const KSStorage = {
         if (!data) return { ok: false, reason: 'No account found. Please register.' };
         if (data.email !== email) return { ok: false, reason: 'Wrong email address!' };
         if (data.passwordHash !== KSCrypto.hash(password)) return { ok: false, reason: 'Wrong password!' };
+
+        // Success
+        data.isLoggedIn = true;
+        this.save(data);
         return { ok: true, data };
     },
 
@@ -140,4 +145,13 @@ const KSStorage = {
         const usedSecs = data.stats.timeUsedToday || 0;
         return Math.max(0, limitSecs - usedSecs);
     },
+
+    /** Clear session (not data) for logout */
+    logout() {
+        const data = this.load();
+        if (data) {
+            data.isLoggedIn = false;
+            this.save(data);
+        }
+    }
 };
