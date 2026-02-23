@@ -409,7 +409,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     padding: var(--sp-lg) var(--sp-md);
-    border-bottom: 0.0625rem solid rgba(247, 248, 226, 0.10);
+    border-bottom: 0.0625rem solid rgb(0 0 0);
 }
 
 .logo-spark-sm {
@@ -446,6 +446,7 @@ body {
     list-style: none;
     flex: 1;
     padding: var(--sp-sm) 0;
+    backdrop-filter: blur(0.75rem);
     overflow-y: auto;
 }
 
@@ -480,7 +481,7 @@ body {
 
 .nav-item:hover {
     background: rgba(247, 248, 226, 0.08);
-    color: var(--c-cream);
+    color: #6d710d
 }
 
 .nav-item.active {
@@ -507,7 +508,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    background: rgba(247, 248, 226);
+    backdrop-filter: blur(0.6rem);
+    border-top: 0.0625rem solid rgb(0 0 0);
 }
 
 .sidebar-timer {
@@ -855,6 +857,7 @@ body {
     font-weight: 800;
     cursor: pointer;
     background: var(--bg-card);
+    backdrop-filter: blur(0.6rem);
     color: var(--c-plum);
     transition: all var(--tr-fast);
 }
@@ -1060,6 +1063,7 @@ body {
     gap: 0.3rem;
     padding: var(--sp-md) 0.5rem;
     background: var(--bg-card);
+    backdrop-filter: blur(0.6rem);
     border: 0.125rem solid rgba(255, 255, 255, 0.6);
     border-radius: var(--br-xl);
     cursor: pointer;
@@ -1542,7 +1546,7 @@ body {
     align-items: center;
     padding: var(--sp-xl) var(--sp-xl) var(--sp-lg);
     background: var(--bg-card);
-    backdrop-filter: blur(0.75rem);
+    backdrop-filter: blur(0.6rem);
     border: 0.0625rem solid rgba(255, 255, 255, 0.6);
     border-radius: var(--br-xl);
     margin-bottom: var(--sp-xl);
@@ -1755,6 +1759,7 @@ body {
 
 .profile-stat-card {
     background: var(--bg-card);
+    backdrop-filter: blur(0.6rem);  
     border-radius: var(--br-lg);
     padding: var(--sp-lg);
     text-align: center;
@@ -1911,7 +1916,7 @@ body {
 
 .pin-gate-card {
     background: var(--bg-card);
-    backdrop-filter: blur(1rem);
+    backdrop-filter: blur(0.5rem);
     border-radius: var(--br-xl);
     padding: var(--sp-2xl);
     text-align: center;
@@ -2078,6 +2083,7 @@ body {
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
     border: 0.0625rem solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(0.6rem);
 }
 
 .settings-card-header {
@@ -2154,6 +2160,7 @@ body {
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
     border: 0.0625rem solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(0.6rem);
 }
 
 .report-preview-header {
@@ -2205,14 +2212,15 @@ body {
 }
 
 .report-info-card {
-    background: linear-gradient(135deg, rgba(156, 205, 98, 0.1), rgba(218, 190, 133, 0.1));
+    background: var(--bg-card);
     border-radius: var(--br-xl);
     padding: 1.5rem;
     box-shadow: var(--shadow-sm);
     border: 0.0625rem solid rgba(156, 205, 98, 0.2);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem;    
+    backdrop-filter: blur(0.6rem);
 }
 
 .report-info-header {
@@ -2942,6 +2950,7 @@ body {
     border-radius: var(--br-lg);
     padding: var(--sp-md);
     box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(0.6rem);
 }
 
 .chart-container {
