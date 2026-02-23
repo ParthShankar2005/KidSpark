@@ -6,8 +6,8 @@
 (function () {
     const HANGING_EMOJIS = ["🎈", "🌟", "☁️", "🍎", "🍩", "🧸", "🪁"];
     const FLYING_BUGS = ["🦋", "🐝", "🐞"];
-    const MAX_HANGING = 6;
-    const MAX_FLYING = 4;
+    const MAX_HANGING = 7;
+    const MAX_FLYING = 8;
 
     let decorationLayer;
 
