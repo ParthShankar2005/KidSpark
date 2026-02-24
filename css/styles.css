@@ -1208,7 +1208,7 @@ body {
 
 .game-card {
     background: var(--bg-card);
-    backdrop-filter: blur(0.75rem);
+    backdrop-filter: blur(0.6rem);
     border: 0.0625rem solid rgba(255, 255, 255, 0.6);
     border-radius: var(--br-xl);
     padding: var(--sp-xl) var(--sp-lg);
@@ -1915,7 +1915,7 @@ body {
 
 .pin-gate-card {
     background: var(--bg-card);
-    backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.6rem);
     border-radius: var(--br-xl);
     padding: var(--sp-2xl);
     text-align: center;
