@@ -114,7 +114,6 @@ body {
 #auth-screen {
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #3A3c42 0%, #452B30 45%, #74404c 100%);
     position: relative;
     overflow: hidden;
 }
@@ -137,7 +136,7 @@ body {
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(213, 29, 72, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
     bottom: -8rem;
     left: -8rem;
     animation: pulse-glow 5s ease-in-out 1s infinite;
@@ -178,20 +177,20 @@ body {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 900;
-    color: #f7f8E2;
+    color: var(--accent);
     letter-spacing: -0.03em;
 }
 
 .logo-tagline {
     font-size: 0.8rem;
-    color: rgba(247, 248, 226, 0.65);
+    color:var(--accent-dark);
     margin-top: 0.25rem;
 }
 
 .auth-title {
     font-family: var(--font-heading);
     font-size: 1.35rem;
-    color: var(--c-cream);
+    color: var(--accent-dark);
     margin-bottom: var(--sp-lg);
     text-align: center;
 }
@@ -205,7 +204,7 @@ body {
     display: block;
     font-size: 0.85rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--accent);
     margin-bottom: 0.3rem;
 }
 
@@ -259,14 +258,14 @@ body {
 }
 
 .form-group input::placeholder {
-    color: rgba(247, 248, 226, 0.40);
+    color: rgba(23, 24, 17, 0.4);
 }
 
 .auth-switch {
     text-align: center;
     margin-top: var(--sp-md);
     font-size: 0.85rem;
-    color: rgba(247, 248, 226, 0.65);
+    color: rgba(33, 34, 30, 0.65);
 }
 
 .auth-switch a {
@@ -504,7 +503,6 @@ body {
 
 .sidebar-footer {
     padding: var(--sp-md) var(--sp-md) var(--sp-lg);
-    border-top: 0.0625rem solid rgba(247, 248, 226, 0.12);
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
@@ -517,7 +515,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.88rem;
-    color: rgba(247, 248, 226, 0.75);
+    color: rgba(247, 248, 226, 0.9);
     font-weight: 700;
     letter-spacing: 0.02em;
     padding: 0.35rem 0.6rem;
@@ -562,15 +560,16 @@ body {
     cursor: pointer;
     border-radius: var(--br-pill);
     transition: all var(--tr-fast);
-    color: var(--c-gold);
+    color: var(--warning);
     font-weight: 700;
     font-size: 1rem;
-    background: #bf765433;
+    background: var(--c-plum);
 }
 
 .sidebar-logout:hover {
-    background: rgba(218, 190, 133, 0.15);
+    background: var(--warning);
     transform: translateY(-2px);
+    color: var(--c-plum);
 }
 
 .sidebar-logout:active {
